@@ -1,0 +1,1 @@
+<p>Your OTP is <?php echo $otp;?></p>

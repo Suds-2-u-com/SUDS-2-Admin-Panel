@@ -1,0 +1,1231 @@
+ 
+
+<form method="post" action="{{url('permission-settings')}}">
+
+     @csrf
+   <input type="hidden" name="id" id="id" value="{{$id}}">
+ @if(!empty($permission))
+
+<?php 
+
+ 
+if(!is_null(json_decode($permission->permission_settings))){ 
+    $pers=json_decode($permission->permission_settings);
+?>    
+
+
+ 
+
+
+<div style="display: flex;">State &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_state" id="add_state" name="setting[]" <?php  if(in_array("add_state", $pers)){ echo 'checked'; }  ?> >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_state" id="update_state" name="setting[]"  <?php if(in_array("update_state", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_state" id="delete_delete" name="setting[]"  <?php if(in_array("delete_delete", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_state" id="view_state" name="setting[]"  <?php if(in_array("view_state", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">City &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_city" id="add_city" name="setting[]"  <?php if(in_array("add_city", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_city" id="update_city" name="setting[]"  <?php if(in_array("update_city", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_city" id="delete_city" name="setting[]"  <?php if(in_array("delete_city", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_city" id="view_city" name="setting[]"  <?php if(in_array("view_city", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Promotions &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_Promotions" id="add_Promotions" name="setting[]"  <?php if(in_array("add_Promotions", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_Promotions" id="update_Promotions" name="setting[]"  <?php if(in_array("update_Promotions", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_Promotions" id="delete_Promotions" name="setting[]"  <?php if(in_array("delete_Promotions", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_Promotions" id="view_Promotions" name="setting[]"  <?php if(in_array("view_Promotions", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Coupon &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_coupon" id="add_coupon" name="setting[]"  <?php if(in_array("add_coupon", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_coupon" id="update_coupon" name="setting[]"  <?php if(in_array("update_coupon", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_coupon" id="delete_coupon" name="setting[]"  <?php if(in_array("delete_coupon", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_coupon" id="view_coupon" name="setting[]"  <?php if(in_array("view_coupon", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Washer &nbsp;
+
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_washer" id="delete_washer" name="setting[]"  <?php if(in_array("delete_washer", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_washer" id="view_washer" name="setting[]"  <?php if(in_array("view_washer", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_document" id="view_washer" name="setting[]"  <?php if(in_array("view_document", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Document &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_document" id="view_washer" name="setting[]"  <?php if(in_array("view_document", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Document &nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_bank_info" id="view_bank_info" name="setting[]"  <?php if(in_array("view_bank_info", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Bank Info &nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_review" id="view_review" name="setting[]"  <?php if(in_array("view_review", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Review &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_pay_out" id="view_pay_out" name="setting[]"  <?php if(in_array("view_pay_out", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Pay Out &nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_percentage" id="view_percentage" name="setting[]"  <?php if(in_array("view_percentage", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Percentage Adjustable &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_background_check" id="view_background_check" name="setting[]"  <?php if(in_array("view_background_check", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Background Check &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_vehicle_insurance" id="view_vehicle_insurance" name="setting[]"  <?php if(in_array("view_vehicle_registration", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Vehicle Insurance&nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_vehicle_registration" id="view_vehicle_registration" name="setting[]"  <?php if(in_array("view_vehicle_registration", $pers)){ echo 'checked'; }  ?>>
+ 
+   Vehicle Registraion&nbsp;
+  </label> 
+</div>
+
+</div>
+
+
+<div style="display: flex;">Customer &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_customer" id="add_customer" name="setting[]"  <?php if(in_array("add_customer", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_customer" id="update_customer" name="setting[]"  <?php if(in_array("update_customer", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_customer" id="delete_customer" name="setting[]"  <?php if(in_array("delete_customer", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_customer" id="view_customer" name="setting[]"  <?php if(in_array("view_customer", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_vehicle" id="view_vehicle" name="setting[]"  <?php if(in_array("view_vehicle", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Vehicle&nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_review" id="view_review" name="setting[]"  <?php if(in_array("view_review", $pers)){ echo 'checked'; }  ?>>
+ 
+    View Review&nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="update_extra_details" id="update_extra_details" name="setting[]"  <?php if(in_array("update_extra_details", $pers)){ echo 'checked'; }  ?>>
+ 
+    Update Extra Profile Details&nbsp;
+  </label> 
+</div>
+
+</div>
+
+<div style="display: flex;">Wash Type &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_washtype" id="add_washtype" name="setting[]"  <?php if(in_array("add_washtype", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_washtype" id="update_washtype" name="setting[]"  <?php if(in_array("update_washtype", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_washtype" id="delete_washtype" name="setting[]"  <?php if(in_array("delete_washtype", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_washtype" id="view_washtype" name="setting[]"  <?php if(in_array("view_washtype", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Add Ons &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_addons" id="add_addons" name="setting[]"  <?php if(in_array("add_addons", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_addons" id="update_addons" name="setting[]"  <?php if(in_array("update_addons", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_addons" id="delete_addons" name="setting[]"  <?php if(in_array("delete_addons", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_addons" id="view_addons" name="setting[]"  <?php if(in_array("view_addons", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Package &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_package" id="add_package" name="setting[]"  <?php if(in_array("add_package", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_package" id="update_package" name="setting[]"  <?php if(in_array("update_package", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_package" id="delete_package" name="setting[]"  <?php if(in_array("delete_package", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_package" id="view_package" name="setting[]"  <?php if(in_array("view_package", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Booking &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_booking" id="view_booking" name="setting[]"  <?php if(in_array("view_booking", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+
+</div>
+<div style="display: flex;">Requests &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_request" id="view_request" name="setting[]"  <?php if(in_array("view_request", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">App-Request &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_app_rquest" id="view_app_rquest" name="setting[]"  <?php if(in_array("view_app_rquest", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_app_rquest" id="delete_app_rquest" name="setting[]"  <?php if(in_array("delete_app_rquest", $pers)){ echo 'checked'; }  ?>>
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">On-Site-Request &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_on_site_request" id="view_on_site_request" name="setting[]"  <?php if(in_array("view_on_site_request", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_on_site_request" id="delete_on_site_request" name="setting[]"  <?php if(in_array("delete_on_site_request", $pers)){ echo 'checked'; }  ?>>
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+<div style="display: flex;">Press-Request &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_press_request" id="view_press_request" name="setting[]"  <?php if(in_array("view_press_request", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_press_request" id="delete_press_request" name="setting[]"  <?php if(in_array("delete_press_request", $pers)){ echo 'checked'; }  ?>>
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">Job Mailing list &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_job_mailing" id="view_job_mailing" name="setting[]"  <?php if(in_array("view_job_mailing", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_view_job_mailing" id="delete_view_job_mailing" name="setting[]"  <?php if(in_array("delete_view_job_mailing", $pers)){ echo 'checked'; }  ?>>
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">Free Wash &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_free_wash" id="view_free_wash" name="setting[]"  <?php if(in_array("view_free_wash", $pers)){ echo 'checked'; }  ?>>
+  
+    view &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">Distance &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_distance" id="add_distance" name="setting[]"  <?php if(in_array("add_distance", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_distance" id="update_distance" name="setting[]"  <?php if(in_array("update_distance", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_distance" id="delete_distance" name="setting[]"  <?php if(in_array("delete_distance", $pers)){ echo 'checked'; }  ?> >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_distance" id="view_distance" name="setting[]"  <?php if(in_array("view_distance", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Extra Time &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_extra_time" id="add_extra_time" name="setting[]"  <?php if(in_array("add_extra_time", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_extra_time" id="update_extra_time" name="setting[]"  <?php if(in_array("update_extra_time", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_extra_time" id="delete_extra_time" name="setting[]"  <?php if(in_array("delete_extra_time", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_extra_time" id="view_distance" name="setting[]"  <?php if(in_array("view_distance", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Service &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_service" id="add_service" name="setting[]" <?php if(in_array("add_service", $pers)){ echo 'checked'; }  ?>>
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_service" id="update_service" name="setting[]"  <?php if(in_array("update_service", $pers)){ echo 'checked'; }  ?>>
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_service" id="delete_service" name="setting[]"  <?php if(in_array("delete_service", $pers)){ echo 'checked'; }  ?>>
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_service" id="view_service" name="setting[]"  <?php if(in_array("view_service", $pers)){ echo 'checked'; }  ?>>
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+<?php }else{ ?>
+<div style="display: flex;">State &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_state" id="add_state" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_state" id="update_state" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_state" id="delete_delete" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_state" id="view_state" name="setting[]" >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">City &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_city" id="add_city" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_city" id="update_city" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_city" id="delete_city" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_city" id="view_city" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Promotions &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_Promotions" id="add_Promotions" name="setting[]" >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_Promotions" id="update_Promotions" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_Promotions" id="delete_Promotions" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_Promotions" id="view_Promotions" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Coupon &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_coupon" id="add_coupon" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_coupon" id="update_coupon" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_coupon" id="delete_coupon" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_coupon" id="view_coupon" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Washer &nbsp;
+
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_washer" id="delete_washer" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_washer" id="view_washer" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_document" id="view_washer" name="setting[]"  >
+ 
+    View Document &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_document" id="view_washer" name="setting[]"  >
+ 
+    View Document &nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_bank_info" id="view_bank_info" name="setting[]"  >
+ 
+    View Bank Info &nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_review" id="view_review" name="setting[]"  >
+ 
+    View Review &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_pay_out" id="view_pay_out" name="setting[]"  >
+ 
+    View Pay Out &nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_percentage" id="view_percentage" name="setting[]"  >
+ 
+    View Percentage Adjustable &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_background_check" id="view_background_check" name="setting[]"  >
+ 
+    View Background Check &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_vehicle_insurance" id="view_vehicle_insurance" name="setting[]"  >
+ 
+    View Vehicle Insurance&nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_vehicle_registration" id="view_vehicle_registration" name="setting[]"  >
+ 
+   Vehicle Registraion&nbsp;
+  </label> 
+</div>
+
+</div>
+
+
+<div style="display: flex;">Customer &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_customer" id="add_customer" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_customer" id="update_customer" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_customer" id="delete_customer" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_customer" id="view_customer" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_vehicle" id="view_vehicle" name="setting[]" >
+ 
+    View Vehicle&nbsp;
+  </label> 
+</div>
+
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_review" id="view_review" name="setting[]"  >
+ 
+    View Review&nbsp;
+  </label> 
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="update_extra_details" id="update_extra_details" name="setting[]"  >
+ 
+    Update Extra Profile Details&nbsp;
+  </label> 
+</div>
+
+</div>
+
+<div style="display: flex;">Wash Type &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_washtype" id="add_washtype" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_washtype" id="update_washtype" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_washtype" id="delete_washtype" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_washtype" id="view_washtype" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Add Ons &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_addons" id="add_addons" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_addons" id="update_addons" name="setting[]" >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_addons" id="delete_addons" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_addons" id="view_addons" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+<div style="display: flex;">Package &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_package" id="add_package" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_package" id="update_package" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_package" id="delete_package" name="setting[]" >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_package" id="view_package" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Booking &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_booking" id="view_booking" name="setting[]"  >
+  
+    view &nbsp;
+  </label>
+</div>
+
+</div>
+<div style="display: flex;">Requests &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_request" id="view_request" name="setting[]"  >
+  
+    view &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">App-Request &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_app_rquest" id="view_app_rquest" name="setting[]" >
+  
+    view &nbsp;
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_app_rquest" id="delete_app_rquest" name="setting[]"  >
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">On-Site-Request &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_on_site_request" id="view_on_site_request" name="setting[]" >
+  
+    view &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_on_site_request" id="delete_on_site_request" name="setting[]"  >
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+<div style="display: flex;">Press-Request &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_press_request" id="view_press_request" name="setting[]"  >
+  
+    view &nbsp;
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_press_request" id="delete_press_request" name="setting[]"  >
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">Job Mailing list &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_job_mailing" id="view_job_mailing" name="setting[]"  >
+  
+    view &nbsp;
+  </label>
+</div>
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="delete_view_job_mailing" id="delete_view_job_mailing" name="setting[]"  >
+  
+    delete &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">Free Wash &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="view_free_wash" id="view_free_wash" name="setting[]"  >
+  
+    view &nbsp;
+  </label>
+</div>
+
+</div>
+
+<div style="display: flex;">Distance &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_distance" id="add_distance" name="setting[]"  >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_distance" id="update_distance" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_distance" id="delete_distance" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_distance" id="view_distance" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Extra Time &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_extra_time" id="add_extra_time" name="setting[]" >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_extra_time" id="update_extra_time" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_extra_time" id="delete_extra_time" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_extra_time" id="view_distance" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+
+
+<div style="display: flex;">Service &nbsp;
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="add_service" id="add_service" name="setting[]" >
+  
+    Add &nbsp;
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" value="update_service" id="update_service" name="setting[]"  >
+  
+    Update &nbsp;
+  </label>
+</div>
+
+
+<div class="form-check">
+  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="delete_service" id="delete_service" name="setting[]"  >
+  
+    Delete &nbsp;
+  </label>
+</div>
+<div class="form-check">
+   <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox" value="view_service" id="view_service" name="setting[]"  >
+ 
+    View &nbsp;
+  </label> 
+</div>
+</div>
+<?php } ?>
+ <button class="btn ripple btn-info" type="submit">Submit</button>
+ <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+@endif
+</form>
